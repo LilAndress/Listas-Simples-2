@@ -35,23 +35,19 @@
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="16" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="nombre" pref="90" max="32767" attributes="0"/>
                   <Component id="edad" alignment="0" max="32767" attributes="0"/>
                   <Component id="promedio" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="consultar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="CrearInicio" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                  </Group>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="CrearInicio" max="32767" attributes="0"/>
+                  <Component id="Insertarfinal" max="32767" attributes="0"/>
+                  <Component id="consultar" alignment="0" max="32767" attributes="0"/>
               </Group>
+              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -68,16 +64,17 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="consultar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="edad" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Insertarfinal" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="promedio" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="consultar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="67" max="32767" attributes="0"/>
+              <EmptySpace pref="66" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -124,6 +121,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Promedio"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="Insertarfinal">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Insertar al Final"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="InsertarfinalActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
