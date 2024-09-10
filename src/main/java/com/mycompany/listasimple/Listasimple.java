@@ -48,34 +48,39 @@ public class Listasimple {
     }
     
         public void insertareleccion(String nombre, int edad, float promedio){
-        Nodo nuevo = new Nodo();
-        String nombreval = "";
-        JOptionPane.showInputDialog("ingrese el nombre del objeto para poner despues de este", nombreval);
-        nuevo.setNombre(nombre);
-        nuevo.setEdad(edad);
-        nuevo.setPromedio(promedio);
-        nuevo.setEnlace(null);
-        
-        if(inicio==null){
-            JOptionPane.showMessageDialog(null, "La lista está vacía");
-            inicio = nuevo;
-            return;
-        }
-        Nodo after = inicio;
-        while(after != null && !after.getNombre().equals(nombreval)){
-            after = inicio.getEnlace();
-        }
-        
-        if(after == null){
-            JOptionPane.showMessageDialog(null, "No existe un objeto con ese nombre en la lista");
-            return;
-        }
-        
-        nuevo.setEnlace(after.getEnlace());
-        after.setEnlace(nuevo);
-        JOptionPane.showMessageDialog(null, "insertado con exito");
+         if (inicio == null) {
+        JOptionPane.showMessageDialog(null, "La lista está vacía, se insertará el nodo al inicio");
+        insertarInicio(nombre, edad, promedio);
+        return;
     }
-    
+
+    String nombreReferencia = JOptionPane.showInputDialog("Ingrese el nombre del nodo después del cual desea insertar el nuevo nodo:");
+    Nodo nuevo = new Nodo();
+    nuevo.setNombre(nombre);
+    nuevo.setEdad(edad);
+    nuevo.setPromedio(promedio);
+
+    Nodo actual = inicio;
+    boolean encontrado = false;
+
+    // Recorrer la lista para encontrar el nodo con el nombre dado
+    while (actual != null) {
+        if (actual.getNombre().equals(nombreReferencia)) {
+            encontrado = true;
+            break;
+        }
+        actual = actual.getEnlace();
+    }
+
+    // Si se encontró el nodo, insertamos el nuevo nodo después del nodo encontrado
+    if (encontrado) {
+        nuevo.setEnlace(actual.getEnlace());
+        actual.setEnlace(nuevo);
+        JOptionPane.showMessageDialog(null, "Nodo insertado con éxito después de " + nombreReferencia);
+    } else {
+        JOptionPane.showMessageDialog(null, "No se encontró un nodo con el nombre especificado.");
+    }
+}
     public void consultar(){
         
         Nodo temporal = inicio;
