@@ -34,6 +34,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         Insertarfinal = new javax.swing.JButton();
+        InsertAfterName = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,14 +67,17 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        InsertAfterName.setText("Insertar Luego de un Nombre");
+        InsertAfterName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InsertAfterNameActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(162, 162, 162)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,6 +95,15 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(Insertarfinal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(consultar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(79, 79, 79))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(162, 162, 162)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(InsertAfterName)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,7 +125,9 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(promedio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
                     .addComponent(consultar))
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(InsertAfterName)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -131,6 +146,10 @@ public class Menu extends javax.swing.JFrame {
     private void InsertarfinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarfinalActionPerformed
         objlist.insertarFinal(nombre.getText(), Integer.parseInt(edad.getText()), Float.parseFloat(promedio.getText()));
     }//GEN-LAST:event_InsertarfinalActionPerformed
+
+    private void InsertAfterNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertAfterNameActionPerformed
+        objlist.insertareleccion(nombre.getText(), Integer.parseInt(edad.getText()), Float.parseFloat(promedio.getText()));
+    }//GEN-LAST:event_InsertAfterNameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,6 +188,7 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CrearInicio;
+    private javax.swing.JButton InsertAfterName;
     private javax.swing.JButton Insertarfinal;
     private javax.swing.JButton consultar;
     private javax.swing.JTextField edad;
