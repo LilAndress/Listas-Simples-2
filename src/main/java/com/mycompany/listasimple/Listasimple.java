@@ -1,5 +1,6 @@
 package com.mycompany.listasimple;
 
+import java.util.Random;
 import javax.swing.JOptionPane;
 
 public class Listasimple {
@@ -180,7 +181,22 @@ public class Listasimple {
     }
     JOptionPane.showMessageDialog(null, "Lista ordenada alfabéticamente por nombre.");
 }
+        public void generarNombresAleatorios() {
+    String[] nombresPredefinidos = {"Carlos", "Ana", "Luis", "María", "Pedro", "Laura", "Jorge", "Elena", "Miguel", "Sofía"};
+    Random random = new Random();
+    
+    int cantidad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de nombres aleatorios a generar:"));
+    
+    for (int i = 0; i < cantidad; i++) {
+        String nombreAleatorio = nombresPredefinidos[random.nextInt(nombresPredefinidos.length)];
+        int edadAleatoria = random.nextInt(100);  // Edad aleatoria entre 0 y 99
+        float promedioAleatorio = 1 + random.nextFloat() * 9;  // Promedio entre 1.0 y 10.0
         
+        insertarFinal(nombreAleatorio, edadAleatoria, promedioAleatorio);  // Insertar en la lista
+    }
+    
+    JOptionPane.showMessageDialog(null, cantidad + " nombres aleatorios generados e insertados.");
+}
     public void consultar(){
         
         Nodo temporal = inicio;

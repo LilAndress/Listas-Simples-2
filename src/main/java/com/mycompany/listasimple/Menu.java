@@ -38,6 +38,7 @@ public class Menu extends javax.swing.JFrame {
         alfabeticamente = new javax.swing.JButton();
         eliminarnombre = new javax.swing.JButton();
         insertarposicion = new javax.swing.JButton();
+        generarnombres = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,20 +99,25 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        generarnombres.setText("Generar nombres");
+        generarnombres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generarnombresActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(78, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap(62, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(insertarposicion)
-                        .addGap(148, 148, 148)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(alfabeticamente)
-                            .addComponent(eliminarnombre))
+                        .addGap(64, 64, 64)
+                        .addComponent(eliminarnombre)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
@@ -140,7 +146,13 @@ public class Menu extends javax.swing.JFrame {
                             .addGap(219, 219, 219))
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(InsertAfterName)
-                            .addGap(337, 337, 337)))))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(alfabeticamente)
+                            .addGap(178, 178, 178)))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(176, 176, 176)
+                .addComponent(generarnombres)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,31 +165,31 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(Insertarfinal)
-                    .addComponent(edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Insertarfinal)
+                        .addComponent(edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addComponent(promedio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(consultar)))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(InsertAfterName)
                     .addComponent(alfabeticamente))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(eliminarnombre))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(insertarposicion)))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(insertarposicion)
+                    .addComponent(eliminarnombre))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(generarnombres)
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         pack();
@@ -212,6 +224,10 @@ public class Menu extends javax.swing.JFrame {
     private void insertarposicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertarposicionActionPerformed
         objlist.insertarEnPosicion(nombre.getText(), WIDTH, TOP_ALIGNMENT);
     }//GEN-LAST:event_insertarposicionActionPerformed
+
+    private void generarnombresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generarnombresActionPerformed
+        objlist.generarNombresAleatorios();
+    }//GEN-LAST:event_generarnombresActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,6 +272,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton consultar;
     private javax.swing.JTextField edad;
     private javax.swing.JButton eliminarnombre;
+    private javax.swing.JButton generarnombres;
     private javax.swing.JButton insertarposicion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
